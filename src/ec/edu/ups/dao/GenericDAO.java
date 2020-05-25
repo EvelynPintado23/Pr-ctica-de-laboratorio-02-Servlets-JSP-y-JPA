@@ -24,5 +24,8 @@ public interface GenericDAO<T ,ID> {
 
 
 	List<Contacto> buscarCorreo(String correo);
+	
+	void deleteByID(ID id);
+	List<T> findAll();
 
 }
