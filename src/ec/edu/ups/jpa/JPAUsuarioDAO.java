@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ec.edu.ups.dao.UsuarioDAO;
-import ec.edu.ups.modelo.Contacto;
 import ec.edu.ups.modelo.Usuario;
 
 public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, String> implements UsuarioDAO {
@@ -43,10 +42,4 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, String> implements Usu
 		return list;
 	}
 
-	@Override
-	public List<Contacto> buscarCorreo(String correo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }

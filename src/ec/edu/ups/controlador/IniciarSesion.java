@@ -40,17 +40,9 @@ public class IniciarSesion extends HttpServlet {
 		// TODO Auto-generated method stub
 
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesion = request.getSession();
-		
-		sesion.setAttribute("accesos", sesion.getAttribute("accesos"));
-		
-		
-
+		sesion.setAttribute("Acceso", sesion.getAttribute("Acceso"));
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html:charset=UTF-8");
 		System.out.print("Iniciar Sesion \n");
@@ -63,31 +55,20 @@ public class IniciarSesion extends HttpServlet {
 
 		String accion = request.getParameter("accion");
 		Usuario user = new Usuario();
-
-		// out.println("<h1>Gracias por acceder al servidor</h1>");
-
 		if (accion.equals("Ingresar")) {
 			correo = request.getParameter("correo");
 			contrasena = request.getParameter("contrasena");
 			user = usuarioDao.buscar(correo, contrasena);
-
 		}
-
 		try {
 			if (user != null) {
 				TelefonoDAO telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
-				// System.out.println(telefonoDao.find().telf_id +','+ str.id_user
-				// +','+str.numero+','+str.tipo+','+str.operadora);
-
 				request.setAttribute("telefono", telefonoDao.buscarCedula(user.getCedula()));
 				request.setAttribute("usuario", user);
 				getServletContext().getRequestDispatcher("/Privada/indexU.jsp").forward(request, response);
 			} else {
-				// url="/Public/login.jsp";
-
 				getServletContext().getRequestDispatcher("/Public/login.jsp").forward(request, response);
 			}
-
 		} catch (Exception e) {
 
 			// TODO: handle exception

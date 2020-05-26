@@ -14,11 +14,22 @@ public class telefono implements Serializable {
 	private String operadora;
 	@ManyToOne
 	@JoinColumn
-	
 	private Usuario usuario;
+	
+	public telefono() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public int getTelf_id() {
 		return telf_id;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public void setTelf_id(int telf_id) {
@@ -47,10 +58,6 @@ public class telefono implements Serializable {
 
 	public void setOperadora(String operadora) {
 		this.operadora = operadora;
-	}
-
-	public telefono() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public telefono(int id, String numero, String tipo, String operadora) {

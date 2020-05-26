@@ -51,9 +51,9 @@ public class Filter implements javax.servlet.Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession sesion = req.getSession();
 
-		System.out.print("Accesos " + String.valueOf(sesion.getAttribute("accesos")));
+		System.out.print("Accesos " + String.valueOf(sesion.getAttribute("Acceso")));
 		System.out.print(" IdSesion " + String.valueOf(sesion.getId()));
-		if (String.valueOf(sesion.getAttribute("accesos")).equals(String.valueOf(sesion.getId()))) {
+		if (String.valueOf(sesion.getAttribute("Acceso")).equals(String.valueOf(sesion.getId()))) {
 
 			System.out.print("Iguales");
 			chain.doFilter(request, response);

@@ -1,10 +1,7 @@
 package ec.edu.ups.dao;
 import java.util.List;
-
-import ec.edu.ups.modelo.Contacto;
 import ec.edu.ups.modelo.Usuario;
 import ec.edu.ups.modelo.telefono;
-
 
 public interface GenericDAO<T ,ID> {
 	
@@ -21,9 +18,9 @@ public interface GenericDAO<T ,ID> {
 	public List<T> find();
 
 	Usuario buscar(String email, String contrasena);
-
-
-	List<Contacto> buscarCorreo(String correo);
+	public List <telefono> buscarCedula(String cedula); 
+	public List <telefono> buscarCorreo(String correo);
+	public List <telefono> buscarCedInv(String cedula);
 	
 	void deleteByID(ID id);
 	List<T> findAll();

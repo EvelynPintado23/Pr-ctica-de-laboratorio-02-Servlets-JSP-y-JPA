@@ -1,5 +1,4 @@
 package ec.edu.ups.controlador;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,11 +40,8 @@ public class EditarContacto extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		HttpSession sesion = request.getSession();
-		
 		sesion.setAttribute("accesos", sesion.getAttribute("accesos"));
-		
 
 		TelefonoDAO telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
 		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
@@ -54,9 +50,8 @@ public class EditarContacto extends HttpServlet {
 		String id =request.getParameter("idUser");
 		
 		telf = telefonoDao.read(Integer.parseInt(request.getParameter("id")));
-		idCed = telf.getId_user();
-		System.out.print(telf.id_user+" "+telf.operadora+" "+telf.numero);
-		
+		idCed = telf.getUsuario().getCedula();
+		System.out.print(telf.getUsuario().getCedula()+" "+telf.getOperadora()+""+telf.getNumero());
 		usuario=usuarioDao.read(id);
 		
 		
@@ -95,13 +90,12 @@ public class EditarContacto extends HttpServlet {
 			
 			usuario=usuarioDao.read(idCed);
 			
-			telf.setId_user(idCed);
+			telf.setUsuario(usuario);
 			telf.setNumero(numero);
 			telf.setOperadora(operadora);
 			telf.setTipo(tipo);
 			
 			telefonoDao.update(telf);
-
 
 		}
 		

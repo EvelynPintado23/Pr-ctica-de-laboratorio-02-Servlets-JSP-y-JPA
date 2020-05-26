@@ -27,14 +27,9 @@ public class Inicio extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 		HttpSession sesion = request.getSession(true);
-
-		
-		// out.println("<h1>Gracias por acceder al servidor</h1>");
 		sesion.setAttribute("accesos", sesion.getId());
-		
 		System.out.print("Sesion Inicio: "+sesion.getId());
 		getServletContext().getRequestDispatcher("/Public/index.html").forward(request, response);
 	}

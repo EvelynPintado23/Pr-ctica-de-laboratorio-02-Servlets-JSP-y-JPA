@@ -47,15 +47,12 @@ public class IndexController extends HttpServlet {
 		Usuario usuario = new Usuario();
 		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
 
-
-			if (Integer.parseInt(request.getParameter("id")) == 1) {
-				usuario=usuarioDao.read(request.getParameter("c"));
-	                                          
-				request.setAttribute("idc", request.getParameter("c"));
-				request.setAttribute("usuario", usuario);
-				getServletContext().getRequestDispatcher("/Privada/registrar.jsp").forward(request, response);
-
-			} else if (Integer.parseInt(request.getParameter("id")) == 2) {
+		if (Integer.parseInt(request.getParameter("id")) == 1) {
+			usuario=usuarioDao.read(request.getParameter("c"));                                  
+			request.setAttribute("idc", request.getParameter("c"));
+			request.setAttribute("usuario", usuario);
+			getServletContext().getRequestDispatcher("/Privada/registrar.jsp").forward(request, response);
+				}else if (Integer.parseInt(request.getParameter("id")) == 2) {
 
 				// System.out.println(telefonoDao.find().telf_id +','+ str.id_user
 				// +','+str.numero+','+str.tipo+','+str.operadora);
@@ -64,18 +61,21 @@ public class IndexController extends HttpServlet {
 				request.setAttribute("telefono", telefonoDao.buscarCedula(usuario.getCedula()));
 				request.setAttribute("usuario", usuario);
 				getServletContext().getRequestDispatcher("/Privada/indexU.jsp").forward(request, response);
+				}
 
+			if (Integer.parseInt(request.getParameter("id")) == 3) {
+				System.out.print("Ingresando....");
+				request.setAttribute("telefono", telefonoDao.findAll());
+				getServletContext().getRequestDispatcher("/Privada/indexI.jsp").forward(request, response);
 			}
-
-		
-
-		if (Integer.parseInt(request.getParameter("id")) == 3) {
-			System.out.print("Esta ingresando....");
-
-			request.setAttribute("telefono", telefonoDao.obtenerContacto());
-			getServletContext().getRequestDispatcher("/Privada/indexI.jsp").forward(request, response);
-
-		}
+			if (Integer.parseInt(request.getParameter("id")) == 4) {
+				System.out.print("Ingresando....");
+				
+				usuario=usuarioDao.read(request.getParameter("idU"));
+				request.setAttribute("usuario", usuario);
+				request.setAttribute("telefono", telefonoDao.findAll());
+				getServletContext().getRequestDispatcher("/Privada/listTelf.jsp").forward(request, response);
+			}
 
 	}
 

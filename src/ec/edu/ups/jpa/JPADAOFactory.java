@@ -11,17 +11,14 @@ public class JPADAOFactory  extends DAOFactory{
 		// TODO Auto-generated method stub
 		return new JPAUsuarioDAO();
 	}
-
 	@Override
 	public TelefonoDAO getTelefonoDAO() {
 		// TODO Auto-generated method stub
 		return new JPATelefonoDAO();
 	}
-
 	@Override
 	public void createTables() {
 		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -46,9 +46,8 @@ public class CrearUsuario extends HttpServlet {
 		String passwd ="";
 		
 		Usuario user = new Usuario();
-		
 		String accion = request.getParameter("registrarUsr");
-		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
+		UsuarioDAO users = DAOFactory.getFactory().getUsuarioDAO();
 		
 		if (accion.equals("RegistrarUsr")) {
 			
@@ -58,13 +57,18 @@ public class CrearUsuario extends HttpServlet {
 			correo = request.getParameter("email");
 			passwd = request.getParameter("psw");
 			
+			System.out.print("Correo: "+correo);
 			user = new Usuario(cedula, nombres, apellidos, correo, passwd);
-			
-			usuarioDao.create(user);
-			
+			if (users.buscarCorreo(correo).size()==0) {
+				users.create(user);
+				getServletContext().getRequestDispatcher("/Public/login.jsp").forward(request, response);
+				
+			}else {
+				request.setAttribute("mensaje", "El correo ya existe");
+				request.setAttribute("usuario", user);
+				
+				getServletContext().getRequestDispatcher("/Public/crear_usuario.jsp").forward(request, response);	
+			}	
 		}
-		
-		getServletContext().getRequestDispatcher("/Public/login.jsp").forward(request, response);	
 	}
-
 }

@@ -17,8 +17,6 @@ import ec.edu.ups.modelo.telefono;
 /**
  * Servlet implementation class RegistrarContacto
  */
-
-
 @WebServlet(name = "RegistrarContacto", urlPatterns = { "/RegistrarContacto" })
 public class RegistrarContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -45,34 +43,24 @@ public class RegistrarContacto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-	
 		String numero="";
 		String tipo = "";
 		String operadora="";
-		
 		HttpSession sesion = request.getSession();
-		
-		sesion.setAttribute("accesos", sesion.getAttribute("accesos"));
-		
-		
-		
+		sesion.setAttribute("Acceso", sesion.getAttribute("Acceso"));
+
 		telefono telf = new telefono();
 		Usuario user = new Usuario();
 		String accion = request.getParameter("registrartelf");
 		TelefonoDAO telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
 		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
 		if (accion.equals("registrarTelf")) {
-			
-			//user = request.getParameter("usr");
 			numero = request.getParameter("numerotxt");
 			tipo = request.getParameter("tip");
 			operadora = request.getParameter("operadoratxt");
-			user=usuarioDao.read("'"+request.getParameter("ced")+"'");
-			System.out.print(user +" "+tipo);
-			
+			user=usuarioDao.read("'"+request.getParameter("ced"));
 			System.out.print("CEDULA:   "+request.getParameter("ced"));
-			telf = new telefono( request.getParameter("ced"), numero, tipo, operadora);
-			
+			telf = new telefono(numero, tipo, operadora, user);
 			telefonoDao.create(telf);
 			
 			try {
@@ -81,12 +69,7 @@ public class RegistrarContacto extends HttpServlet {
 				getServletContext().getRequestDispatcher("/Privada/indexU.jsp").forward(request, response);
 			} catch (Exception e) {
 				// TODO: handle exception
-			}
-			
-		}
-		
-		
-		
+			}	
+		}	
 	}
-
 }

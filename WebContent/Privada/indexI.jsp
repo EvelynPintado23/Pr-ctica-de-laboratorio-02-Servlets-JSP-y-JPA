@@ -16,9 +16,9 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/main.css" />
+	href="/ProyectoEv2/config/styles/assets/css/main.css" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/noscript.css" />
+	href="/ProyectoEv2/config/styles/assets/css/noscript.css" />
 
 
 <link rel="stylesheet"
@@ -36,14 +36,14 @@
 		<!-- Header -->
 		<header id="header" class="alt">
 			<h1 id="logo">
-				<a href="/ProyectoEV/IndexController?id=3">
+				<a href="/ProyectoEv2/IndexController?id=3">
 					Contactos</a>
 			</h1>
 			<nav id="nav">
 				<ul>
 					<li class="current"><a href="index.html"> </a></li>
 
-					<li><a href="/ProyectoEV/CerrarSesion" class="button primary">Salir</a></li>
+					<li><a href="/ProyectoEv2/CerrarSesion" class="button primary">Salir</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -63,7 +63,7 @@
 
 
 
-						<form action="/ProyectoEV/Buscar?id=1" method="POST" >
+						<form action="/ProyectoEv2/Buscar?id=1" method="POST" >
 							<div class="input-group mb-3 input-group-sm">
 								<div class="input-group-prepend">
 									<button class="input-group-text" name="buscarCorreo"
@@ -78,7 +78,7 @@
 
 
 
-						<form action="/ProyectoEV/Buscar?id=2" method="POST" >
+						<form action="/ProyectoEv2/Buscar?id=2" method="POST" >
 							<div class="input-group mb-3 input-group-sm">
 								<div class="input-group-prepend">
 									<button class="input-group-text" name="buscarCed"
@@ -155,16 +155,16 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="/ProyectoEV/config/styles/assets/js/jquery.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/jquery.min.js"></script>
 	<script
-		src="/ProyectoEV/config/styles/assets/js/jquery.dropotron.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/jquery.scrolly.min.js"></script>
+		src="/ProyectoEv2/config/styles/assets/js/jquery.dropotron.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/jquery.scrolly.min.js"></script>
 	<script
-		src="/ProyectoEV/config/styles/assets/js/jquery.scrollex.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/browser.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/breakpoints.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/util.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/main.js"></script>
+		src="/ProyectoEv2/config/styles/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/browser.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/breakpoints.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/util.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/main.js"></script>
 
 </body>
 </html>

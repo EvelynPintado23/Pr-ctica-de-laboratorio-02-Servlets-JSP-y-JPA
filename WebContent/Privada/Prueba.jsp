@@ -16,15 +16,12 @@
   <p>To create a custom select menu, add the .custom-select class to the select element:</p>
   <form action="/action_page.php">
   
-  
     <select name="cars" class="custom-select mb-3">
       <option selected>Custom Select Menu</option>
       <option value="volvo">Volvo</option>
       <option value="fiat">Fiat</option>
       <option value="audi">Audi</option>
     </select>
-    
-    
     
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

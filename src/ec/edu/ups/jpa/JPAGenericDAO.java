@@ -1,31 +1,25 @@
 package ec.edu.ups.jpa;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-
 import ec.edu.ups.dao.GenericDAO;
-import ec.edu.ups.modelo.Contacto;
 import ec.edu.ups.modelo.Usuario;
+import ec.edu.ups.modelo.telefono;
 
 public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 
 	private Class <T> persistentClass;
 	protected EntityManager em;
-	
 	public JPAGenericDAO(Class<T> persistentClass) {
 		this.persistentClass = persistentClass;
-		this.em = Persistence.createEntityManagerFactory("ProjectJPA2").createEntityManager();
+		this.em = Persistence.createEntityManagerFactory("ProyectoEv2").createEntityManager();
 	}
-	
 	@Override
 	public void createTable() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
-
 	@Override
 	public void create(T entity) {
 		// TODO Auto-generated method stub
@@ -67,13 +61,12 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			em.remove(entity);
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			System.out.println(">>>> ERROR:JPAGenericDAO:delete " + e);
+			System.out.println("ERROR:JPAGenericDAO:delete " + e);
 			if (em.getTransaction().isActive())
 				em.getTransaction().rollback();
 		}
 	}
 	
-
 	@Override
 	public List<T> find() {
 		// TODO Auto-generated method stub
@@ -87,12 +80,6 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
         nativeQuery.setParameter(1, email);
         nativeQuery.setParameter(2, contrasena);
         return (Usuario) nativeQuery.getSingleResult();
-	}
-
-	@Override
-	public List<Contacto> buscarCorreo(String correo) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -118,6 +105,23 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			e.printStackTrace();
 		}
 		return lista;
+	}
+
+	@Override
+	public List<telefono> buscarCedula(String cedula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<telefono> buscarCedInv(String cedula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<telefono> buscarCorreo(String correo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
