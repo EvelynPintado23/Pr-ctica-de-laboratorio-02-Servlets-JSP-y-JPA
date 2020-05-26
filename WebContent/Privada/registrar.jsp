@@ -16,9 +16,9 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/main.css" />
+	href="/ProyectoEv2/config/styles/assets/css/main.css" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/noscript.css" />
+	href="/ProyectoEv2/config/styles/assets/css/noscript.css" />
 
 
 <link rel="stylesheet"
@@ -27,9 +27,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<link rel="stylesheet" href="/ProyectoEV/config/styles/stylesRT.css">
+<link rel="stylesheet" href="/ProyectoEv2/config/styles/stylesRT.css">
 <script type="text/javascript"
-	src="/ProyectoEV/config/JS/validaciones.js"></script>
+	src="/ProyectoEv2/config/JS/validaciones.js"></script>
 </head>
 <body class="index is-preload">
 	<c:set var="p1" value="${requestScope['usuario']}" />
@@ -39,7 +39,7 @@
 		<!-- Header -->
 		<header id="header" class="alt">
 			<h1 id="logo">
-				<a href="/ProyectoEV/IndexController?id=2&idU=${p1.cedula}">
+				<a href="/ProyectoEv2/IndexController?id=2&idU=${p1.cedula}">
 					Contactos</a>
 			</h1>
 			<nav id="nav">
@@ -47,7 +47,7 @@
 					<li class="current"><a href="index.html"> ${p1.nombres}
 							${p1.apellidos}</a></li>
 
-					<li><a href="/ProyectoEV/CerrarSesion" class="button primary">Salir</a></li>
+					<li><a href="/ProyectoEv2/CerrarSesion" class="button primary">Salir</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -68,7 +68,7 @@
 
 						<div class="contenedor">
 
-							<form action="/ProyectoEV/RegistrarContacto?ced=${p2}"
+							<form action="/ProyectoEv2/RegistrarContacto?ced=${p2}"
 								method="POST" onsubmit="return validarCamposObligatorios()">
 								<div class="container">
 									<h1>Registrar contacto:</h1>
@@ -143,16 +143,16 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="/ProyectoEV/config/styles/assets/js/jquery.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/jquery.min.js"></script>
 	<script
-		src="/ProyectoEV/config/styles/assets/js/jquery.dropotron.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/jquery.scrolly.min.js"></script>
+		src="/ProyectoEv2/config/styles/assets/js/jquery.dropotron.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/jquery.scrolly.min.js"></script>
 	<script
-		src="/ProyectoEV/config/styles/assets/js/jquery.scrollex.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/browser.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/breakpoints.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/util.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/main.js"></script>
+		src="/ProyectoEv2/config/styles/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/browser.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/breakpoints.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/util.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/main.js"></script>
 
 </body>
 </html>

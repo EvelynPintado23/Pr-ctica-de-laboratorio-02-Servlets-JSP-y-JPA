@@ -59,16 +59,20 @@ public class CrearUsuario extends HttpServlet {
 			
 			System.out.print("Correo: "+correo);
 			user = new Usuario(cedula, nombres, apellidos, correo, passwd);
-			if (users.buscarCorreo(correo).size()==0) {
-				users.create(user);
-				getServletContext().getRequestDispatcher("/Public/login.jsp").forward(request, response);
-				
-			}else {
-				request.setAttribute("mensaje", "El correo ya existe");
-				request.setAttribute("usuario", user);
-				
-				getServletContext().getRequestDispatcher("/Public/crear_usuario.jsp").forward(request, response);	
-			}	
+			//users.create(user);
+			//getServletContext().getRequestDispatcher("/Public/login.jsp").forward(request, response);
+			
+			  if (users.buscarCorreo(correo).size()==0) {
+				 users.create(user);
+			  getServletContext().getRequestDispatcher("/Public/login.jsp").forward(
+			  request, response);
+			  
+			  }else { request.setAttribute("mensaje", "El correo ya existe");
+			  request.setAttribute("usuario", user);
+			  
+			  getServletContext().getRequestDispatcher("/Public/crear_usuario.jsp").forward
+			  (request, response); }
+			 	
 		}
 	}
 }

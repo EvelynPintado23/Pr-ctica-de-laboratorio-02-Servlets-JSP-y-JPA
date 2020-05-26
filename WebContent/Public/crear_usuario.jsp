@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE HTML>
 <!--
 	Twenty by HTML5 UP
@@ -13,15 +14,17 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/main.css" />
+	href="/ProyectoEv2/config/styles/assets/css/main.css" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/noscript.css" />
-<link rel="stylesheet" href="/ProyectoEV/config/styles/stylesLoginn.css"
+	href="/ProyectoEv2/config/styles/assets/css/noscript.css" />
+<link rel="stylesheet" href="/ProyectoEv2/config/styles/stylesLoginn.css"
 	type="text/css">
-<link rel="stylesheet" href="/ProyectoEV/config/styles/stylesCrUser.css">
-<script type="text/javascript" src="/ProyectoEV/config/JS/validaciones.js"></script>
+<link rel="stylesheet" href="/ProyectoEv2/config/styles/stylesCrUser.css">
+<script type="text/javascript" src="/ProyectoEv2/config/JS/validaciones.js"></script>
 </head>
 <body class="index is-preload">
+	<c:set var="p1" value="${requestScope['usuario']}" />
+	<c:set var="p2" value="${requestScope['mensaje']}" />
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -31,7 +34,7 @@
 			</h1>
 			<nav id="nav">
 				<ul>
-					<li><a href="/ProyectoEV/Public/login.jsp" class="button primary">Iniciar Sesion</a></li>
+					<li><a href="/ProyectoEv2/Public/login.jsp" class="button primary">Iniciar Sesion</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -49,29 +52,29 @@
 
 				<div class="cuerpo">
 					<div class="contenedor">
-						<form action="/ProyectoEV/crearUsuario" method="POST"
+						<form action="/ProyectoEv2/crearUsuario" method="POST"
 							onsubmit="return validarCamposObligatorios()">
 							<div class="container">
 								<p>Registrar Usuario</p>
 								<hr>
 
 								<label for="cedula"><b>Cedula</b></label> <input id="cedulaID"
-									type="text" placeholder="Ingresar cedula" name="cedula"
+									type="text"  value="${p1.cedula}" placeholder="Ingresar cedula" name="cedula"
 									onkeypress="ValidarNumeros(event, 'mensajeCedula', this)"
 									required> <span id="mensajeCedula"></span> <label
 									for="nombres"><b>Nombres</b></label> <input id="nombresID"
-									type="text" placeholder="Ingresar nombres" name="nombres"
+									type="text"  value="${p1.nombres}" placeholder="Ingresar nombres" name="nombres"
 									onkeypress="ValidarLetras(event, 'mensajeNombres', this)"
 									required><span id="mensajeNombres"></span> <label
 									for="apellidos"><b>Apellidos</b></label> <input
-									id="apellidosID" type="text" placeholder="Ingresar apellidos"
+									id="apellidosID"  value="${p1.apellidos}" type="text" placeholder="Ingresar apellidos"
 									name="apellidos"
 									onkeypress="ValidarLetras(event, 'mensajeApellidos', this)"
 									required><span id="mensajeApellidos"></span> <label
 									for="email"><b>Email</b></label> <input id="emailID"
-									type="text" placeholder="Ingresar email" name="email" required><span
-									id="mensajeCorreo"></span> <label for="psw"><b>Contraseña</b></label>
-								<input id="passID" type="password"
+									type="text"  value="${p1.correo}" placeholder="Ingresar email" name="email" required><span style="border: 1px red solid; color: red"
+									id="mensajeCorreo"> ${p2}</span><br> <label for="psw"><b>Contraseña</b></label>
+								<input id="passID" type="password"  value="${p1.password}"
 									placeholder="Ingresar contraseña" name="psw" required>
 								<hr>
 

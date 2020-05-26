@@ -27,7 +27,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script type="text/javascript" src="/ProyectoEV/config/JS/validaciones.js"></script>	
+<script type="text/javascript" src="/ProyectoEv2/config/JS/validaciones.js"></script>	
 </head>
 <body class="index is-preload">
 	<c:set var="p1" value="${requestScope['telefono']}" />
@@ -106,8 +106,8 @@
 
 								<c:forEach var="telf" items="${p1}">
 									<tr>
-										<td>${telf.nombres}${telf.apellidos}</td>
-										<td>${telf.correo}<a href="mailto:${telf.correo} "><img
+										<td>${telf.usuario.nombres}  ${telf.usuario.apellidos}</td>
+										<td>${telf.usuario.correo}<a href="mailto:${telf.usuario.correo} "><img
 												width="25px" height="25px"
 												src="https://img.icons8.com/flat_round/64/000000/secured-letter--v1.png" /></a></td>
 										<td>${telf.tipo}</td>

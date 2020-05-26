@@ -58,14 +58,16 @@ public class RegistrarContacto extends HttpServlet {
 			numero = request.getParameter("numerotxt");
 			tipo = request.getParameter("tip");
 			operadora = request.getParameter("operadoratxt");
-			user=usuarioDao.read("'"+request.getParameter("ced"));
+			user=usuarioDao.read(request.getParameter("ced"));
+			System.out.print("Cedula Retornada..."+request.getParameter("ced"));
+
 			System.out.print("CEDULA:   "+request.getParameter("ced"));
 			telf = new telefono(numero, tipo, operadora, user);
 			telefonoDao.create(telf);
 			
 			try {
 				request.setAttribute("usuario", user);
-				request.setAttribute("telefono", telefonoDao.buscarCedula( request.getParameter("ced")));				
+				request.setAttribute("telefono", telefonoDao.buscarCedula(request.getParameter("ced")));				
 				getServletContext().getRequestDispatcher("/Privada/indexU.jsp").forward(request, response);
 			} catch (Exception e) {
 				// TODO: handle exception

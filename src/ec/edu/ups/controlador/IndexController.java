@@ -38,11 +38,11 @@ public class IndexController extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession sesion = request.getSession();
-		sesion.setAttribute("accesos", sesion.getAttribute("accesos"));
+		sesion.setAttribute("Acceso", sesion.getAttribute("Acceso"));
 
 		
 		
-		System.out.print("Id sesion IndexController: "+sesion.getAttribute("accesos"));
+		System.out.print("Id sesion IndexController: "+sesion.getAttribute("Acceso"));
 		TelefonoDAO telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
 		Usuario usuario = new Usuario();
 		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();

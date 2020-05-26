@@ -14,9 +14,9 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/main.css" />
+	href="/ProyectoEv2/config/styles/assets/css/main.css" />
 <link rel="stylesheet"
-	href="/ProyectoEV/config/styles/assets/css/noscript.css" />
+	href="/ProyectoEv2/config/styles/assets/css/noscript.css" />
 <link rel="stylesheet" href="/ProyectoEV/config/styles/stylesLoginn.css"
 	type="text/css">	
 </head>
@@ -36,7 +36,7 @@
 							<li><a href="left-sidebar.html">Listar Contactos</a></li>
 							
 						</ul>
-					<li><a href="/ProyectoEV/Public/crear_usuario.jsp" class="button primary">Registrarse</a></li>
+					<li><a href="/ProyectoEv2/Public/crear_usuario.jsp" class="button primary">Registrarse</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -55,10 +55,10 @@
 				<div class="cuerpo">
 
 					<div class="contenido">
-						<form action="/ProyectoEV/iniciarSesion" method="POST">
+						<form action="/ProyectoEv2/iniciarSesion" method="POST">
 
 							<div class="imgcontainer">
-								<img src="/ProyectoEV/config/images/avat_ima.png"
+								<img src="/ProyectoEv2/config/images/avat_ima.png"
 									alt="Avatar" class="avatar">
 							</div>
 
@@ -113,16 +113,16 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="/ProyectoEV/config/styles/assets/js/jquery.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/jquery.min.js"></script>
 	<script
-		src="/ProyectoEV/config/styles/assets/js/jquery.dropotron.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/jquery.scrolly.min.js"></script>
+		src="/ProyectoEv2/config/styles/assets/js/jquery.dropotron.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/jquery.scrolly.min.js"></script>
 	<script
-		src="/ProyectoEV/config/styles/assets/js/jquery.scrollex.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/browser.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/breakpoints.min.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/util.js"></script>
-	<script src="/ProyectoEV/config/styles/assets/js/main.js"></script>
+		src="/ProyectoEv2/config/styles/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/browser.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/breakpoints.min.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/util.js"></script>
+	<script src="/ProyectoEv2/config/styles/assets/js/main.js"></script>
 
 </body>
 </html>

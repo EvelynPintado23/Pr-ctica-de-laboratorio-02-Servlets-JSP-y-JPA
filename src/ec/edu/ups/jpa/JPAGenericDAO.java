@@ -23,6 +23,7 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	@Override
 	public void create(T entity) {
 		// TODO Auto-generated method stub
+		System.out.print("REGISTRANDO...");
 		em.getTransaction().begin();
 		try {
 			em.persist(entity);
@@ -37,6 +38,7 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 
 	@Override
 	public T read(ID id) {
+		System.out.print("LEYENDO....");
 		// TODO Auto-generated method stub
 		return em.find(persistentClass, id);
 	}
@@ -76,7 +78,7 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	@Override
 	public Usuario buscar(String email, String contrasena) {
 		// TODO Auto-generated method stub
-		Query nativeQuery = em.createNativeQuery("SELECT * FROM usuario WHERE correo = ? AND pwd =? ", Usuario.class);
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM usuario WHERE correo = ? AND password =? ", Usuario.class);
         nativeQuery.setParameter(1, email);
         nativeQuery.setParameter(2, contrasena);
         return (Usuario) nativeQuery.getSingleResult();
@@ -110,18 +112,26 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	@Override
 	public List<telefono> buscarCedula(String cedula) {
 		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Consulta Realizada...");
+		Query nativeQuery = em.createNativeQuery("SELECT telf_id, numero, operadora, tipo, usuario_cedula FROM usuario, telefono WHERE telefono.usuario_cedula=usuario.cedula and usuario.cedula= ?", telefono.class);
+		 nativeQuery.setParameter(1, cedula);
+		System.out.println("Consulta Realizada...");
+		return (List<telefono>)nativeQuery.getResultList();
 	}
 
 	@Override
 	public List<telefono> buscarCedInv(String cedula) {
 		// TODO Auto-generated method stub
-		return null;
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM usuario, telefono WHERE telefono.usuario_cedula=usuario.cedula and usuario.cedula= ?", telefono.class);
+		 nativeQuery.setParameter(1, cedula);
+		return (List<telefono>) nativeQuery.getResultList();
 	}
 	@Override
 	public List<telefono> buscarCorreo(String correo) {
 		// TODO Auto-generated method stub
-		return null;
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM usuario, telefono WHERE telefono.usuario_cedula=usuario.cedula and usuario.correo= ?", telefono.class);
+		 nativeQuery.setParameter(1, correo);
+		return (List<telefono>) nativeQuery.getResultList();
 	}
 
 }

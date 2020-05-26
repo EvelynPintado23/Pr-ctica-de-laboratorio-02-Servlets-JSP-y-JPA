@@ -18,12 +18,6 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, String> implements Usu
 		// TODO Auto-generated method stub
 	}
 
-	@Override
-	public Usuario read(String id) {
-		// TODO Auto-generated method stub
-		Usuario usuarioObject = null;
-		return usuarioObject;
-	}
 
 	@Override
 	public void update(Usuario entity) {
